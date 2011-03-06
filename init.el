@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(require 'ido)
 (require 'color-theme)
 (require 'color-theme-tango)
 (color-theme-tango)
@@ -7,10 +8,12 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(ido-enable-flex-matching t)
+ '(ido-mode (quote both) nil (ido))
+ '(initial-buffer-choice nil)
  '(py-pychecker-command "~/.emacs.d/pychecker.sh")
  '(py-pychecker-command-args (quote ("")))
  '(python-check-command "~/.emacs.d/pychecker.sh")
- '(initial-buffer-choice nil)
  '(show-paren-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
