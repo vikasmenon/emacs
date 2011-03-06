@@ -23,8 +23,8 @@
  '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 (require 'framemove)
-    (windmove-default-keybindings)
-    (setq framemove-hook-into-windmove t)
+(windmove-default-keybindings)
+(setq framemove-hook-into-windmove t)
 
 (setq inhibit-startup-message t)
 (tool-bar-mode 0)
@@ -115,30 +115,5 @@
   (run-hooks 'py-shell-hook))))
 
 
-;;(require 'ido)
-;;(ido-mode t)
-;;(setq ido-enable-flex-matching t)
-
-
-;; add pylookup to your loadpath, ex) ~/.emacs.d/pylookup
-(setq pylookup-dir "~/.emacs.d/pylookup")
-(add-to-list 'load-path pylookup-dir)
-
-;; load pylookup when compile time
-(eval-when-compile (require 'pylookup))
-
-;; set executable file and db file
-(setq pylookup-program (concat pylookup-dir "/pylookup.py"))
-(setq pylookup-db-file (concat pylookup-dir "/pylookup.db"))
-
-;; to speedup, just load it on demand
-(autoload 'pylookup-lookup "pylookup"
-  "Lookup SEARCH-TERM in the Python HTML indexes." t)
-
-(autoload 'pylookup-update "pylookup" 
-  "Run pylookup-update and create the database at `pylookup-db-file'." t)
-
 (load-library "init_python.el")
-
-;;(load-library "ryan-python.el")
 
