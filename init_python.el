@@ -139,6 +139,9 @@
 
 (autoload 'pylookup-update "pylookup" 
   "Run pylookup-update and create the database at `pylookup-db-file'." t)
+
+(setq browse-url-default-browser "/opt/google/chrome/google-chrome")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; set ipython as the default python shell. 
@@ -199,5 +202,19 @@
   (run-hooks 'py-shell-hook))))
 
 (global-set-key "\C-c h" 'pylookup-lookup)
+
+(defun pydoc (&optional arg)
+  (interactive)
+  (when (not (stringp arg))
+    (setq arg (thing-at-point 'word)))
+
+  (setq cmd (concat "pydoc " arg))
+  (ad-activate-regexp "auto-compile-yes-or-no-p-always-yes")
+  (shell-command cmd)
+  (setq pydoc-buf (get-buffer "*Shell Command Output*"))
+  (switch-to-buffer-other-window pydoc-buf)
+  (python-mode)
+  (ad-deactivate-regexp "auto-compile-yes-or-no-p-always-yes")
+)
 
 (provide 'init_python)
