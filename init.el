@@ -60,3 +60,5 @@
 (load-library "init_python.el")
 
 (load-library "init_erlang.el")
+
+(load-library "init_haskell.el")
