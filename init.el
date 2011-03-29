@@ -59,3 +59,4 @@
 
 (load-library "init_python.el")
 
+(load-library "init_erlang.el")
