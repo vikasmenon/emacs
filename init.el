@@ -2,6 +2,7 @@
 (require 'ido)
 (require 'color-theme)
 (require 'color-theme-tango)
+(require 'erc)
 (color-theme-tango)
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -39,6 +40,8 @@
 (setq show-paren-delay 0)
 (transient-mark-mode t)
 
+(require 'redspace-mode)
+(redspace-mode)
 
 (require 'rect-mark)
 (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
