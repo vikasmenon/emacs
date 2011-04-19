@@ -217,4 +217,13 @@
   (ad-deactivate-regexp "auto-compile-yes-or-no-p-always-yes")
 )
 
+(defun python-add-breakpoint ()
+  (interactive)
+  (py-newline-and-indent)
+  (insert "import ipdb; ipdb.set_trace()")
+  (highlight-lines-matching-regexp "^[ 	]*import ipdb; ipdb.set_trace()"))
+(define-key py-mode-map (kbd "C-c C-t") 'python-add-breakpoint)
+
 (provide 'init_python)
+
+
