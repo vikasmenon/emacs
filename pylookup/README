@@ -1,0 +1,60 @@
+<Author>
+
+ Taesoo Kim (taesoo@mit.edu)
+
+ Michael Markert (markert.michael@gmail.com)
+ 
+<README>
+
+ Pylookup stole idea from 'http://furius.ca/haddoc', one of my favorite 
+ emacs mode for python documentation lookup. I reimplemented python code and 
+ elisp code not just to support new version of python 2.7 but also to extend 
+ it for other documentation lookup interfaces with easy. Importantly, pylookup 
+ mode is much faster and supports fancy highlighting.
+
+ Please check, 
+    Web  : http://taesoo.org/Opensource/Pylookup
+    Repo : http://github.com/tsgates/pylookup
+
+<INSTALL>
+
+ ** [PATH] parameter totally depends on your environment, 
+      ex) "~/.emacs.d/pylookup"
+
+;; ======================================================================
+;; add pylookup to your loadpath, ex) ~/.emacs.d/pylookup
+(setq pylookup-dir "[PATH]")
+(add-to-list 'load-path pylookup-dir)
+
+;; load pylookup when compile time
+(eval-when-compile (require 'pylookup))
+
+;; set executable file and db file
+(setq pylookup-program (concat pylookup-dir "/pylookup.py"))
+(setq pylookup-db-file (concat pylookup-dir "/pylookup.db"))
+
+;; to speedup, just load it on demand
+(autoload 'pylookup-lookup "pylookup"
+  "Lookup SEARCH-TERM in the Python HTML indexes." t)
+
+(autoload 'pylookup-update "pylookup" 
+  "Run pylookup-update and create the database at `pylookup-db-file'." t)
+;;----------------------------------------------------------------------
+
+<SEARCHING LOCAL HTML>
+
+Index the database by yourself
+
+1. download any versions of documents from 'http://docs.python.org'
+2. indexing by typing './pylookup.py -u python-2.7.1-docs-html'
+ (or './pylookup.py -u http://docs.python.org' if you want to access online doc)
+3. testing: './pylookup.py -l ljust' you should see some results, good luck
+
+<UPDATING DATABASE>
+
+- Single source
+  './pylookup.py -u http://docs.python.org'
+- Multiple sources, remote and local
+  './pylookup.py -u http://docs.python.org -u ~/dev/python'
+- Adding local source to existing database (duplicate entries are not checked)
+  './pylookup.py -a -u ~/dev/python'
