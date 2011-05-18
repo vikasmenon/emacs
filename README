@@ -1,6 +1,7 @@
 Things to add:
 ECB: Emacs Code Browser: http://ecb.sourceforge.net/
 CEDET: http://cedet.sourceforge.net/
+MAGIT: integration with git
 ORG mode for keeping track of todo's and time spent on each.
 http://orgmode.org/manual/Installation.html#Installation
 Start using a good chat client like Jabber.
