@@ -76,3 +76,5 @@
 (load-library "init_erlang.el")
 
 (load-library "init_haskell.el")
+
+(load-file "~/.emacs.d/cedet/common/cedet.el")
