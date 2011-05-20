@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002, 2003, 2004, 2007 Richard Kim
 
-;; Author: Vikas <whisky@Thor>
-;; Created: 2011-05-18 14:27:16-0400
+;; Author: Mona <whisky@ubuntu.ubuntu-domain>
+;; Created: 2011-05-20 15:56:43-0400
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

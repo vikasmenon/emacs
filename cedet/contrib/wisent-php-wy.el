@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2008 Free Software Foundation
 
-;; Author: Vikas <whisky@Thor>
-;; Created: 2011-05-18 14:27:54-0400
+;; Author: Mona <whisky@ubuntu.ubuntu-domain>
+;; Created: 2011-05-20 15:56:49-0400
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

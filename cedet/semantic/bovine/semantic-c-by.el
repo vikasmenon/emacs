@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Eric M. Ludlam
 
-;; Author: Vikas <whisky@Thor>
-;; Created: 2011-05-18 14:27:22-0400
+;; Author: Mona <whisky@ubuntu.ubuntu-domain>
+;; Created: 2011-05-20 15:56:44-0400
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
