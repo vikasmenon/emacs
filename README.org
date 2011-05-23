@@ -1,0 +1,12 @@
+* Tasks
+** TODO ORG mode for keeping track of todo's and time spent on each.
+*** TODO: http://orgmode.org/manual/Installation.html#Installation
+*** Move this readme to org.
+** TODO ECB: Emacs Code Browser: http://ecb.sourceforge.net/
+** TODO CEDET: http://cedet.sourceforge.net/ - Installed.
+*** TODO Configure shortcuts correctly.
+** TODO MAGIT: integration with git
+** TODO Start using a good chat client like Jabber.
+*** TODO Learn to use ERC effectively to visit IRC forums.
+*** TODO Start using gmail and other mail accounts inside emacs
+** TODO Start reading RSS feeds inside emacs.
