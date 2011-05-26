@@ -9,6 +9,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.40")
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
  '(initial-buffer-choice nil)
@@ -87,3 +88,12 @@
 (require 'ecb)
 
 (require 'erc)
+
+(require 'org-install)
+(setq jabber-account-list
+    '(("vmenon@abextratech.com"
+       (:network-server . "talk.google.com")
+       (:connection-type . ssl))
+       ("menonvikas@gmail.com"
+       (:network-server . "talk.google.com")
+       (:connection-type . ssl))))
