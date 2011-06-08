@@ -41,8 +41,9 @@
 (setq show-paren-delay 0)
 (transient-mark-mode t)
 
-(require 'redspace-mode)
-(redspace-mode)
+;; This is no longer required, since we now use ws-trim.el which autmatically trims any white spaces on the same line.
+;;(require 'redspace-mode)
+;;(redspace-mode)
 
 (require 'rect-mark)
 (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
