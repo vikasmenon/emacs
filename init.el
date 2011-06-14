@@ -120,3 +120,6 @@
   (interactive)
   (if (string= major-mode "jde-mode")
       (ws-trim-tabs)))
+
+;; Copy from clipboard
+(setq x-select-enable-clipboard t)
