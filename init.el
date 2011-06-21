@@ -115,6 +115,9 @@
 (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
 (add-hook 'ws-trim-method-hook 'joc-no-tabs-in-java-hook)
 
+;; simpler implementation to delete trailing white spaces (but only before saving)
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (defun joc-no-tabs-in-java-hook ()
   "WS-TRIM Hook to strip all tabs in Java mode only"
   (interactive)
