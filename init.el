@@ -91,7 +91,6 @@
 
 (require 'erc)
 
-(require 'org-install)
 (setq jabber-account-list
     '(("vmenon@abextratech.com"
        (:network-server . "talk.google.com")
