@@ -132,3 +132,11 @@
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
+
+;; Adding header information
+;;(add-hook 'emacs-lisp-mode-hook 'auto-make-header)
+
+;; Adding google client
+;; Download and make from http://emacspeak.googlecode.com/files/g-client.tar.bz2
+(add-to-list 'load-path "~/.emacs.d/g-client/")
+(load-library "g")
