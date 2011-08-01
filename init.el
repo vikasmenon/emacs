@@ -140,3 +140,6 @@
 ;; Download and make from http://emacspeak.googlecode.com/files/g-client.tar.bz2
 (add-to-list 'load-path "~/.emacs.d/g-client/")
 (load-library "g")
+
+;Adding smart operator
+(require 'smart-operator)
