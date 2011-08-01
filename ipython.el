@@ -366,7 +366,7 @@ in the current *Python* session."
                (insert completion))
               (t
                (message "Making completion list...")
-	       (with-output-to-temp-buffer "*Python Completions*"
+               (with-output-to-temp-buffer "*Python Completions*"
                  (display-completion-list (all-completions pattern completion-table)))
                (message "Making completion list...%s" "done")))))
   ;; emacs
