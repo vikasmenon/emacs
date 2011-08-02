@@ -143,3 +143,5 @@
 
 ;Adding smart operator
 (require 'smart-operator)
+
+(column-number-mode 1)
