@@ -1,0 +1,1 @@
+D:\cygwin\bin\python.exe D:\cygwin\home\whisky\.emacs.d\runpyflakes.py %*
