@@ -2,16 +2,18 @@
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
-;; (add-hook 'python-mode-hook
-;;       (lambda ()
+(add-hook 'python-mode-hook
+       (lambda ()
+  (smart-operator-mode-on))
+
 ;; 	(set-variable 'py-indent-offset 4)
 ;; 	;(set-variable 'py-smart-indentation nil)
 ;; 	(set-variable 'indent-tabs-mode nil)
 ;; 	(define-key py-mode-map (kbd "RET") 'newline-and-indent)
 ;; 	;(define-key py-mode-map [tab] 'yas/expand)
 ;; 	;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)
-;; 	(smart-operator-mode-on)
-;; 	))
+
+ 	)
 ;; ;; pymacs
 ;; (autoload 'pymacs-apply "pymacs")
 ;; (autoload 'pymacs-call "pymacs")
@@ -118,7 +120,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Pylookup for checking python syntax. 
+;; Pylookup for checking python syntax.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -137,14 +139,14 @@
 (autoload 'pylookup-lookup "pylookup"
   "Lookup SEARCH-TERM in the Python HTML indexes." t)
 
-(autoload 'pylookup-update "pylookup" 
+(autoload 'pylookup-update "pylookup"
   "Run pylookup-update and create the database at `pylookup-db-file'." t)
 
 (setq browse-url-default-browser "/opt/google/chrome/google-chrome")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; set ipython as the default python shell. 
+;; set ipython as the default python shell.
 (setq ipython-command "/usr/bin/ipython")
 (require 'ipython)
 
@@ -160,7 +162,7 @@
 (defun django-shell (&optional argprompt)
   (interactive "P")
   ;; Set the default shell if not already set
-  (labels ((read-django-project-dir 
+  (labels ((read-django-project-dir
         (prompt dir)
         (let* ((dir (read-directory-name prompt dir))
                (manage (expand-file-name (concat dir "manage.py"))))
@@ -170,11 +172,11 @@
               (message "%s is not a Django project directory" manage)
               (sleep-for .5)
               (read-django-project-dir prompt dir))))))
-(let* ((dir (read-django-project-dir 
-             "project directory: " 
+(let* ((dir (read-django-project-dir
+             "project directory: "
              default-directory))
-       (project-name (first 
-                      (remove-if (lambda (s) (or (string= "src" s) (string= "" s))) 
+       (project-name (first
+                      (remove-if (lambda (s) (or (string= "src" s) (string= "" s)))
                                  (reverse (split-string dir "/")))))
        (buffer-name (format "django-%s" project-name))
        (manage (concat dir "manage.py")))
