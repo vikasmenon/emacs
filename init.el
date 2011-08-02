@@ -91,7 +91,6 @@
 
 (require 'erc)
 
-(require 'org-install)
 (setq jabber-account-list
     '(("vmenon@abextratech.com"
        (:network-server . "talk.google.com")
@@ -115,6 +114,9 @@
 (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
 (add-hook 'ws-trim-method-hook 'joc-no-tabs-in-java-hook)
 
+;; simpler implementation to delete trailing white spaces (but only before saving)
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (defun joc-no-tabs-in-java-hook ()
   "WS-TRIM Hook to strip all tabs in Java mode only"
   (interactive)
@@ -123,3 +125,21 @@
 
 ;; Copy from clipboard
 (setq x-select-enable-clipboard t)
+
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/org")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+
+;; Adding header information
+;;(add-hook 'emacs-lisp-mode-hook 'auto-make-header)
+
+;; Adding google client
+;; Download and make from http://emacspeak.googlecode.com/files/g-client.tar.bz2
+(add-to-list 'load-path "~/.emacs.d/g-client/")
+(load-library "g")
+
+;Adding smart operator
+(require 'smart-operator)
