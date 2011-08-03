@@ -16,6 +16,7 @@
  '(py-pychecker-command "~/.emacs.d/pychecker.sh")
  '(py-pychecker-command-args (quote ("")))
  '(python-check-command "~/.emacs.d/pychecker.sh")
+ '(py-shell-switch-buffers-on-execute nil)
  '(show-paren-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
