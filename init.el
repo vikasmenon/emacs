@@ -143,3 +143,8 @@
 
 ;Adding smart operator
 (require 'smart-operator)
+
+;Required per org manual. Needed for using org version 7.7
+(require 'org-install)
+
+(setq w3m-use-cookies t)
