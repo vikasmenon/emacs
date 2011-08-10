@@ -5,7 +5,9 @@
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (add-hook 'python-mode-hook
        (lambda ()
-  (smart-operator-mode-on))
+	 (smart-operator-mode-on)
+	 (local-set-key (kbd "C-c C-j") 'py-execute-line)
+	 (local-set-key (kbd "C-c C-e") 'py-execute-region)))
 
 ;; 	(set-variable 'py-indent-offset 4)
 ;; 	;(set-variable 'py-smart-indentation nil)
@@ -13,8 +15,6 @@
 ;; 	(define-key py-mode-map (kbd "RET") 'newline-and-indent)
 ;; 	;(define-key py-mode-map [tab] 'yas/expand)
 ;; 	;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)
-
- 	)
 ;; ;; pymacs
 ;; (autoload 'pymacs-apply "pymacs")
 ;; (autoload 'pymacs-call "pymacs")
@@ -242,6 +242,22 @@
                   '("\\.py\\'" flymake-pyflakes-init)))
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;; Execute single lines of code.
+;; Thanks to byebuddynarwhal: http://www.reddit.com/r/emacs/comments/iznob/emacs_and_python_please_help_me_make_it_perfect/
+(defun py-mark-line ()
+  (interactive)
+  (end-of-line)
+  (push-mark (point))
+  (beginning-of-line)
+  (exchange-point-and-mark)
+  (py-keep-region-active))
+(defun py-execute-line (&optional async)
+  (interactive "P")
+  (save-excursion
+    (py-mark-line)
+    (py-execute-region (mark) (point) async)))
+
 ;;=======================================================================
 
 (provide 'init_python)

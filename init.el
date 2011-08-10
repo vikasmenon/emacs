@@ -16,6 +16,7 @@
  '(py-pychecker-command "~/.emacs.d/pychecker.sh")
  '(py-pychecker-command-args (quote ("")))
  '(python-check-command "~/.emacs.d/pychecker.sh")
+ '(py-shell-switch-buffers-on-execute nil)
  '(show-paren-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -143,3 +144,13 @@
 
 ;Adding smart operator
 (require 'smart-operator)
+
+;Required per org manual. Needed for using org version 7.7
+(require 'org-install)
+
+;; This is required for browsing sites like gmail
+(setq w3m-use-cookies t)
+
+;; Show column numbers while viewing any files
+(column-number-mode 1)
+
