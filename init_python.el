@@ -263,3 +263,23 @@
 (provide 'init_python)
 
 
+;; Adding python checking script thanks to Daniel Molina: http://coder.cl/2011/08/integrating-pycheckers-and-emacs/
+
+(defun dmw-python-mode-hook ()
+  (setq py-indent-offset 4
+        py-smart-indentation nil
+        py-continuation-offset 4
+        indent-tabs-mode nil
+        py-pychecker-command "pycheckers"
+        py-pychecker-command-args (quote ("")))
+  (setq interpreter-mode-alist(cons '("python" . python-mode)
+                                    interpreter-mode-alist))
+  (eldoc-mode 1)
+  (define-key py-mode-map "\C-c\C-w" (lambda ()
+                                      (interactive)
+                                      (command-execute
+                                       'py-pychecker-run)))
+  (message ">>> done dmw-python-mode-hook..."))
+
+;;; then we add the hook function.
+(add-hook 'python-mode-hook 'dmw-python-mode-hook)

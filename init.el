@@ -13,9 +13,6 @@
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
  '(initial-buffer-choice nil)
- '(py-pychecker-command "~/.emacs.d/pychecker.sh")
- '(py-pychecker-command-args (quote ("")))
- '(python-check-command "~/.emacs.d/pychecker.sh")
  '(py-shell-switch-buffers-on-execute nil)
  '(show-paren-mode t))
 (custom-set-faces
