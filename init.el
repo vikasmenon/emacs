@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/pymacs-0.25/")
 (add-to-list 'load-path "~/.emacs.d/init_scripts/")
+(add-to-list 'load-path "~/.emacs.d/ensime/elisp/")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,6 +18,8 @@
  '(describe-char-unicodedata-file "~/.emacs.d/UnicodeData.txt")
  '(unicodedata-file "~/.emacs.d/UnicodeDataFull.txt")
 )
+(set-face-attribute 'default nil :font "Consolas-13")
+
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
@@ -48,10 +51,8 @@
 (global-set-key (kbd "C-x r C-w")   'rm-kill-region)
 (global-set-key (kbd "C-x r M-w")   'rm-kill-ring-save)
 
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (autoload 'python-mode "init_python" nil t)
 (add-hook 'python-mode 'pretty-lambda)
-
-(add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
 (autoload 'haskell-mode "init_haskell" nil t)
+(autoload 'scala-mode "init_scala" nil t)
 

@@ -1,0 +1,5 @@
+  Emacs.Fontset-0: \
+  -misc-dejavu Sans Mono-medium-r-*-*-12-*-*-*-m-*-fontset-dejavu,\
+  mule-unicode-0100-24ff:-monotype-courier-medium-r-*-*-*-*-*-*-m-*-iso10646-1
+
+  Emacs.Font: fontset-dejavu

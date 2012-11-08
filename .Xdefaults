@@ -1,0 +1,6 @@
+  Emacs.Fontset-0: \
+  -apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1,\
+  consolas:-apple-Consolas-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1,\
+  dejavu:-apple-DejaVu_Sans-medium-normal-normal-*-12-*-*-*-p-0-iso10646-1
+
+  Emacs.Font: fontset-dejavu
